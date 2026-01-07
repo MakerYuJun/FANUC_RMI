@@ -1,0 +1,8 @@
+README.md
+setup.py
+fanuc_rmi/__init__.py
+fanuc_rmi/fanuc_rmi_api.py
+fanuc_rmi.egg-info/PKG-INFO
+fanuc_rmi.egg-info/SOURCES.txt
+fanuc_rmi.egg-info/dependency_links.txt
+fanuc_rmi.egg-info/top_level.txt

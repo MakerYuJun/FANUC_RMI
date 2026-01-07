@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: fanuc-rmi
+Version: 0.1.0
+Summary: FANUC机器人RMI API客户端库
+Home-page: 
+Author: 
+Author-email: 
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# fanuc-rmi
+
+FANUC机器人RMI API客户端库，用于与FANUC机器人进行通信和控制。
+
+## 安装
+
+### 从源码安装
+
+```bash
+# 克隆或下载项目源码后，进入项目目录
+pip install .
+```
+
+### 开发模式安装
+
+```bash
+pip install -e .
+```
+
+## 使用示例
+
+```python
+from fanuc_rmi import fanucrobot
+
+# 创建机器人实例
+robot = fanucrobot()
+
+# 连接到机器人
+robot.connect("192.168.5.12")
+
+# 获取当前位置
+pose = robot.get_pose()
+print(f"当前位置: {pose}")
+
+# 获取当前关节角度
+joint = robot.get_joint()
+print(f"当前关节角度: {joint}")
+
+# 关节运动到指定角度
+robot.moveJ("joint", [0, 0, 0, 0, 0, 0])
+
+# 线性运动到指定位置
+robot.moveL("pose", [661, 571, 523, -80, -85, -81])
+
+# 断开连接
+robot.disconnect()
+```
+
+## 功能特性
+
+* 连接/断开机器人
+* 获取当前位置和关节角度
+* 关节运动（Joint Motion）
+* 线性运动（Linear Motion）
+* 重置机器人
+* 支持运动轨迹规划
+
+## 依赖
+
+* Python 3.6+
+* 无需额外依赖
+
+## 许可证
+
+MIT License
